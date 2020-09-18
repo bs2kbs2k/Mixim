@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -27,7 +27,7 @@ package org.spongepowered.tools.obfuscation;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.interfaces.IObfuscationManager;
 import org.spongepowered.tools.obfuscation.interfaces.IObfuscationDataProvider;
 import org.spongepowered.tools.obfuscation.interfaces.IReferenceManager;
@@ -35,14 +35,14 @@ import org.spongepowered.tools.obfuscation.mapping.IMappingConsumer;
 import org.spongepowered.tools.obfuscation.service.ObfuscationServices;
 
 /**
- * Obfuscation Manager for mixin Annotation Processor
+ * Obfuscation Manager for mixim Annotation Processor
  */
 public class ObfuscationManager implements IObfuscationManager {
     
     /**
      * Annotation processor
      */
-    private final IMixinAnnotationProcessor ap;
+    private final IMiximAnnotationProcessor ap;
     
     /**
      * Available obfuscation environments
@@ -66,7 +66,7 @@ public class ObfuscationManager implements IObfuscationManager {
     
     private boolean initDone;
     
-    public ObfuscationManager(IMixinAnnotationProcessor ap) {
+    public ObfuscationManager(IMiximAnnotationProcessor ap) {
         this.ap = ap;
         this.obfs = new ObfuscationDataProvider(ap, this.environments);
         this.refs = new ReferenceManager(ap, this.environments);

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -49,7 +49,7 @@ public final class MessageRouter {
         /**
          * Logger 
          */
-        private static final Logger logger = LogManager.getLogger("mixin");
+        private static final Logger logger = LogManager.getLogger("mixim");
 
         @Override
         public void printMessage(Kind kind, CharSequence msg) {

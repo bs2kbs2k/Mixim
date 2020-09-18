@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -30,35 +30,35 @@ import javax.lang.model.element.ElementKind;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
 
-import org.spongepowered.tools.obfuscation.MixinValidator;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.MiximValidator;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.mirror.AnnotationHandle;
 import org.spongepowered.tools.obfuscation.mirror.TypeHandle;
 
 /**
- * Validator which checks that the mixin parent is sane
+ * Validator which checks that the mixim parent is sane
  */
-public class ParentValidator extends MixinValidator {
+public class ParentValidator extends MiximValidator {
 
     /**
      * ctor
      * 
      * @param ap Processing environment
      */
-    public ParentValidator(IMixinAnnotationProcessor ap) {
+    public ParentValidator(IMiximAnnotationProcessor ap) {
         super(ap, ValidationPass.EARLY);
     }
 
     /* (non-Javadoc)
-     * @see org.spongepowered.tools.obfuscation.MixinValidator
+     * @see org.spongepowered.tools.obfuscation.MiximValidator
      *      #validate(javax.lang.model.element.TypeElement,
      *      org.spongepowered.tools.obfuscation.AnnotationHandle,
      *      java.util.Collection)
      */
     @Override
-    public boolean validate(TypeElement mixin, AnnotationHandle annotation, Collection<TypeHandle> targets) {
-        if (mixin.getEnclosingElement().getKind() != ElementKind.PACKAGE && !mixin.getModifiers().contains(Modifier.STATIC)) {
-            this.error("Inner class mixin must be declared static", mixin);
+    public boolean validate(TypeElement mixim, AnnotationHandle annotation, Collection<TypeHandle> targets) {
+        if (mixim.getEnclosingElement().getKind() != ElementKind.PACKAGE && !mixim.getModifiers().contains(Modifier.STATIC)) {
+            this.error("Inner class mixim must be declared static", mixim);
         }
         
         return true;

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -33,53 +33,53 @@ import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 
-import org.spongepowered.asm.mixin.gen.Accessor;
-import org.spongepowered.asm.mixin.gen.Invoker;
-import org.spongepowered.tools.obfuscation.MixinValidator;
+import org.spongepowered.asm.mixim.gen.Accessor;
+import org.spongepowered.asm.mixim.gen.Invoker;
+import org.spongepowered.tools.obfuscation.MiximValidator;
 import org.spongepowered.tools.obfuscation.SupportedOptions;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.mirror.AnnotationHandle;
 import org.spongepowered.tools.obfuscation.mirror.TypeUtils;
 import org.spongepowered.tools.obfuscation.mirror.TypeHandle;
 
 /**
- * Validator which checks that the mixin targets are sane
+ * Validator which checks that the mixim targets are sane
  */
-public class TargetValidator extends MixinValidator {
+public class TargetValidator extends MiximValidator {
 
     /**
      * ctor
      * 
      * @param ap Processing environment
      */
-    public TargetValidator(IMixinAnnotationProcessor ap) {
+    public TargetValidator(IMiximAnnotationProcessor ap) {
         super(ap, ValidationPass.LATE);
     }
 
     /* (non-Javadoc)
-     * @see org.spongepowered.tools.obfuscation.MixinValidator
+     * @see org.spongepowered.tools.obfuscation.MiximValidator
      *      #validate(javax.lang.model.element.TypeElement,
      *      org.spongepowered.tools.obfuscation.AnnotationHandle,
      *      java.util.Collection)
      */
     @Override
-    public boolean validate(TypeElement mixin, AnnotationHandle annotation, Collection<TypeHandle> targets) {
+    public boolean validate(TypeElement mixim, AnnotationHandle annotation, Collection<TypeHandle> targets) {
         if ("true".equalsIgnoreCase(this.options.getOption(SupportedOptions.DISABLE_TARGET_VALIDATOR))) {
             return true;
         }
         
-        if (mixin.getKind() == ElementKind.INTERFACE) {
-            this.validateInterfaceMixin(mixin, targets);
+        if (mixim.getKind() == ElementKind.INTERFACE) {
+            this.validateInterfaceMixim(mixim, targets);
         } else {
-            this.validateClassMixin(mixin, targets);
+            this.validateClassMixim(mixim, targets);
         }
         
         return true;
     }
 
-    private void validateInterfaceMixin(TypeElement mixin, Collection<TypeHandle> targets) {
+    private void validateInterfaceMixim(TypeElement mixim, Collection<TypeHandle> targets) {
         boolean containsNonAccessorMethod = false;
-        for (Element element : mixin.getEnclosedElements()) {
+        for (Element element : mixim.getEnclosedElements()) {
             if (element.getKind() == ElementKind.METHOD) {
                 boolean isAccessor = AnnotationHandle.of(element, Accessor.class).exists();
                 boolean isInvoker = AnnotationHandle.of(element, Invoker.class).exists();
@@ -94,18 +94,18 @@ public class TargetValidator extends MixinValidator {
         for (TypeHandle target : targets) {
             TypeElement targetType = target.getElement();
             if (targetType != null && !(targetType.getKind() == ElementKind.INTERFACE)) {
-                this.error("Targetted type '" + target + " of " + mixin + " is not an interface", mixin);
+                this.error("Targetted type '" + target + " of " + mixim + " is not an interface", mixim);
             }
         }
     }
 
-    private void validateClassMixin(TypeElement mixin, Collection<TypeHandle> targets) {
-        TypeMirror superClass = mixin.getSuperclass();
+    private void validateClassMixim(TypeElement mixim, Collection<TypeHandle> targets) {
+        TypeMirror superClass = mixim.getSuperclass();
         
         for (TypeHandle target : targets) {
             TypeMirror targetType = target.getType();
             if (targetType != null && !this.validateSuperClass(targetType, superClass)) {
-                this.error("Superclass " + superClass + " of " + mixin + " was not found in the hierarchy of target class " + targetType, mixin);
+                this.error("Superclass " + superClass + " of " + mixim + " was not found in the hierarchy of target class " + targetType, mixim);
             }
         }
     }
@@ -133,16 +133,16 @@ public class TargetValidator extends MixinValidator {
             return false;
         }
         
-        if (this.checkMixinsFor(targetSuper, superClass)) {
+        if (this.checkMiximsFor(targetSuper, superClass)) {
             return true;
         }
         
         return this.validateSuperClassRecursive(targetSuper, superClass);
     }
 
-    private boolean checkMixinsFor(TypeMirror targetType, TypeMirror superClass) {
-        for (TypeMirror mixinType : this.getMixinsTargeting(targetType)) {
-            if (TypeUtils.isAssignable(this.processingEnv, mixinType, superClass)) {
+    private boolean checkMiximsFor(TypeMirror targetType, TypeMirror superClass) {
+        for (TypeMirror miximType : this.getMiximsTargeting(targetType)) {
+            if (TypeUtils.isAssignable(this.processingEnv, miximType, superClass)) {
                 return true;
             }
         }

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.Set;
 
 import org.spongepowered.tools.obfuscation.SupportedOptions;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.service.IObfuscationService;
 import org.spongepowered.tools.obfuscation.service.ObfuscationTypeDescriptor;
 
@@ -64,7 +64,7 @@ public class ObfuscationServiceMCP implements IObfuscationService {
     }
 
     @Override
-    public Collection<ObfuscationTypeDescriptor> getObfuscationTypes(IMixinAnnotationProcessor ap) {
+    public Collection<ObfuscationTypeDescriptor> getObfuscationTypes(IMiximAnnotationProcessor ap) {
         Builder<ObfuscationTypeDescriptor> list = ImmutableList.<ObfuscationTypeDescriptor>builder();
         if (!ap.getOptions(SupportedOptions.MAPPING_TYPES).contains("tsrg")) {
             list.add(

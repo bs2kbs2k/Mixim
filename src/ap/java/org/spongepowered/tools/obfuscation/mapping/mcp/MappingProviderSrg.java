@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -31,7 +31,7 @@ import java.nio.charset.Charset;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
 
-import org.spongepowered.asm.mixin.throwables.MixinException;
+import org.spongepowered.asm.mixim.throwables.MiximException;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 import org.spongepowered.asm.obfuscation.mapping.mcp.MappingFieldSrg;
@@ -85,7 +85,7 @@ public class MappingProviderSrg extends MappingProvider {
                 } else if (type.equals("MD")) {
                     methodMap.forcePut(new MappingMethod(args[0], args[1]), new MappingMethod(args[2], args[3]));
                 } else {
-                    throw new MixinException("Invalid SRG file: " + input);
+                    throw new MiximException("Invalid SRG file: " + input);
                 }
                 
                 return true;

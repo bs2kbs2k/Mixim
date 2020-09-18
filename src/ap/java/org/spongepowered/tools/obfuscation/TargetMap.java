@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -46,8 +46,8 @@ import org.spongepowered.tools.obfuscation.mirror.TypeReference;
 import com.google.common.io.Files;
 
 /**
- * Serialisable map of classes to their associated mixins, used so that we can
- * pass target information for supermixins from one compiler session to another
+ * Serialisable map of classes to their associated mixims, used so that we can
+ * pass target information for supermixims from one compiler session to another
  */
 public final class TargetMap extends HashMap<TypeReference, Set<TypeReference>> {
 
@@ -82,104 +82,104 @@ public final class TargetMap extends HashMap<TypeReference, Set<TypeReference>> 
     }
 
     /**
-     * Register target classes for the specified mixin
+     * Register target classes for the specified mixim
      * 
-     * @param mixin mixin to add targets for
+     * @param mixim mixim to add targets for
      */
-    public void registerTargets(AnnotatedMixin mixin) {
-        this.registerTargets(mixin.getTargets(), mixin.getHandle());
+    public void registerTargets(AnnotatedMixim mixim) {
+        this.registerTargets(mixim.getTargets(), mixim.getHandle());
     }
 
     /**
-     * Register target classes for the supplied mixin
+     * Register target classes for the supplied mixim
      * 
      * @param targets List of targets
-     * @param mixin Mixin class
+     * @param mixim Mixim class
      */
-    public void registerTargets(List<TypeHandle> targets, TypeHandle mixin) {
+    public void registerTargets(List<TypeHandle> targets, TypeHandle mixim) {
         for (TypeHandle target : targets) {
-            this.addMixin(target, mixin);
+            this.addMixim(target, mixim);
         }
     }
     
     /**
-     * Register the specified mixin against the specified target
+     * Register the specified mixim against the specified target
      * 
      * @param target Target class
-     * @param mixin Mixin class
+     * @param mixim Mixim class
      */
-    public void addMixin(TypeHandle target, TypeHandle mixin) {
-        this.addMixin(target.getReference(), mixin.getReference());
+    public void addMixim(TypeHandle target, TypeHandle mixim) {
+        this.addMixim(target.getReference(), mixim.getReference());
     }
 
     /**
-     * Register the specified mixin against the specified target
+     * Register the specified mixim against the specified target
      * 
      * @param target Target class
-     * @param mixin Mixin class
+     * @param mixim Mixim class
      */
-    public void addMixin(String target, String mixin) {
-        this.addMixin(new TypeReference(target), new TypeReference(mixin));
+    public void addMixim(String target, String mixim) {
+        this.addMixim(new TypeReference(target), new TypeReference(mixim));
     }
     
     /**
-     * Register the specified mixin against the specified target
+     * Register the specified mixim against the specified target
      * 
      * @param target Target class
-     * @param mixin Mixin class
+     * @param mixim Mixim class
      */
-    public void addMixin(TypeReference target, TypeReference mixin) {
-        Set<TypeReference> mixins = this.getMixinsFor(target);
-        mixins.add(mixin);
+    public void addMixim(TypeReference target, TypeReference mixim) {
+        Set<TypeReference> mixims = this.getMiximsFor(target);
+        mixims.add(mixim);
     }
 
     /**
-     * Get mixin classes which target the specified class
+     * Get mixim classes which target the specified class
      * 
      * @param target Target class
-     * @return Collection of mixins registered as targetting the specified class
+     * @return Collection of mixims registered as targetting the specified class
      */
-    public Collection<TypeReference> getMixinsTargeting(TypeElement target) {
-        return this.getMixinsTargeting(new TypeHandle(target));
+    public Collection<TypeReference> getMiximsTargeting(TypeElement target) {
+        return this.getMiximsTargeting(new TypeHandle(target));
     }
     
     /**
-     * Get mixin classes which target the specified class
+     * Get mixim classes which target the specified class
      * 
      * @param target Target class
-     * @return Collection of mixins registered as targetting the specified class
+     * @return Collection of mixims registered as targetting the specified class
      */
-    public Collection<TypeReference> getMixinsTargeting(TypeHandle target) {
-        return this.getMixinsTargeting(target.getReference());
+    public Collection<TypeReference> getMiximsTargeting(TypeHandle target) {
+        return this.getMiximsTargeting(target.getReference());
     }
     
     /**
-     * Get mixin classes which target the specified class
+     * Get mixim classes which target the specified class
      * 
      * @param target Target class
-     * @return Collection of mixins registered as targetting the specified class
+     * @return Collection of mixims registered as targetting the specified class
      */
-    public Collection<TypeReference> getMixinsTargeting(TypeReference target) {
-        return Collections.<TypeReference>unmodifiableCollection(this.getMixinsFor(target));
+    public Collection<TypeReference> getMiximsTargeting(TypeReference target) {
+        return Collections.<TypeReference>unmodifiableCollection(this.getMiximsFor(target));
     }
     
     /**
-     * Get mixin set for specified class
+     * Get mixim set for specified class
      * 
      * @param target Target class
-     * @return Set of mixins registered as targetting the specified class
+     * @return Set of mixims registered as targetting the specified class
      */
-    private Set<TypeReference> getMixinsFor(TypeReference target) {
-        Set<TypeReference> mixins = this.get(target);
-        if (mixins == null) {
-            mixins = new HashSet<TypeReference>();
-            this.put(target, mixins);
+    private Set<TypeReference> getMiximsFor(TypeReference target) {
+        Set<TypeReference> mixims = this.get(target);
+        if (mixims == null) {
+            mixims = new HashSet<TypeReference>();
+            this.put(target, mixims);
         }
-        return mixins;
+        return mixims;
     }
     
     /**
-     * Read upstream library mixins from a file
+     * Read upstream library mixims from a file
      * 
      * @param file File to read from
      * @throws IOException if an error occurs whilst reading the file
@@ -192,7 +192,7 @@ public final class TargetMap extends HashMap<TypeReference, Set<TypeReference>> 
         for (String line : Files.readLines(file, Charset.defaultCharset())) {
             String[] parts = line.split("\t");
             if (parts.length == 2) {
-                this.addMixin(parts[1], parts[0]);
+                this.addMixim(parts[1], parts[0]);
             }
         }
     }
@@ -278,7 +278,7 @@ public final class TargetMap extends HashMap<TypeReference, Set<TypeReference>> 
 
     private static File getSessionFile(String sessionId) {
         File tempDir = new File(System.getProperty("java.io.tmpdir"));
-        return new File(tempDir, String.format("mixin-targetdb-%s.tmp", sessionId));
+        return new File(tempDir, String.format("mixim-targetdb-%s.tmp", sessionId));
     }
 
 }

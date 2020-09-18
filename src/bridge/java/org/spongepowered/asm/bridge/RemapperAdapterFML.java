@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -27,7 +27,7 @@ package org.spongepowered.asm.bridge;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import org.spongepowered.asm.mixin.extensibility.IRemapper;
+import org.spongepowered.asm.mixim.extensibility.IRemapper;
 
 /**
  * Remapper adapter which remaps using FML's deobfuscating remapper
@@ -44,7 +44,7 @@ public final class RemapperAdapterFML extends RemapperAdapter {
     
     private RemapperAdapterFML(org.objectweb.asm.commons.Remapper remapper, Method mdUnmap) {
         super(remapper);
-        this.logger.info("Initialised Mixin FML Remapper Adapter with {}", remapper);
+        this.logger.info("Initialised Mixim FML Remapper Adapter with {}", remapper);
         this.mdUnmap = mdUnmap;
     }
 

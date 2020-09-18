@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -24,8 +24,8 @@
  */
 package org.spongepowered.tools.obfuscation.interfaces;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorRemappable;
-import org.spongepowered.asm.mixin.refmap.ReferenceMapper;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorRemappable;
+import org.spongepowered.asm.mixim.refmap.ReferenceMapper;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 import org.spongepowered.tools.obfuscation.ObfuscationData;
@@ -67,7 +67,7 @@ public interface IReferenceManager {
     /**
      * Adds a method mapping to the internal refmap
      * 
-     * @param className Mixin class name which owns the refmap entry
+     * @param className Mixim class name which owns the refmap entry
      * @param reference Original reference, as it appears in the annotation
      * @param obfMethodData Method data to add for this mapping
      */
@@ -77,7 +77,7 @@ public interface IReferenceManager {
      * Adds a method mapping to the internal refmap, generates refmap entries
      * using the supplied parsed target selector as context
      * 
-     * @param className Mixin class name which owns the refmap entry
+     * @param className Mixim class name which owns the refmap entry
      * @param reference Original reference, as it appears in the annotation
      * @param context The context for this mapping entry, remapped using the
      *      supplied obfuscation data
@@ -90,7 +90,7 @@ public interface IReferenceManager {
      * Adds a field mapping to the internal refmap, generates refmap entries
      * using the supplied parsed target selector as context
      * 
-     * @param className Mixin class name which owns the refmap entry
+     * @param className Mixim class name which owns the refmap entry
      * @param reference Original reference, as it appears in the annotation
      * @param context The context for this mapping entry, remapped using the
      *      supplied obfuscation data
@@ -102,7 +102,7 @@ public interface IReferenceManager {
     /**
      * Adds a class mapping to the internal refmap
      * 
-     * @param className Mixin class name which owns the refmap entry
+     * @param className Mixim class name which owns the refmap entry
      * @param reference Original reference, as it appears in the annotation
      * @param obfClassData Class obf names
      */

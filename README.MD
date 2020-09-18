@@ -1,23 +1,23 @@
 
-### [![Build Status](http://ci.liteloader.com/view/Other/job/Mixin/badge/icon)](http://ci.liteloader.com/view/Other/job/Mixin/lastSuccessfulBuild/)
+### [![Build Status](http://ci.liteloader.com/view/Other/job/Mixim/badge/icon)](http://ci.liteloader.com/view/Other/job/Mixim/lastSuccessfulBuild/)
 
-![Mixin Logo](docs/logo.png?raw=true)
+![Mixim Logo](docs/logo.png?raw=true)
 
-**Mixin** is a trait/mixin framework for Java using [ASM](http://asm.ow2.org/)
+**Mixim** is a trait/mixim framework for Java using [ASM](http://asm.ow2.org/)
 and hooking into the runtime class-loading process via Mojang's
 [LegacyLauncher](https://github.com/Mojang/LegacyLauncher) system.
 
 ### Documentation
 
-The main documentation for **Mixin** can be found in the [Wiki](../../wiki).
+The main documentation for **Mixim** can be found in the [Wiki](../../wiki).
 
 Additional documentation for individual features and annotations can be found in
-the extensive [Javadoc](http://jenkins.liteloader.com/job/Mixin/javadoc/). For
-additional help use the channel [`#mixin` on the
+the extensive [Javadoc](http://jenkins.liteloader.com/job/Mixim/javadoc/). For
+additional help use the channel [`#mixim` on the
 Sponge Discord Server](https://discord.gg/tBcwxz2).
 
-### Building Mixin
-**Mixin** uses the [Gradle](http://gradle.org/) build automation system. To
+### Building Mixim
+**Mixim** uses the [Gradle](http://gradle.org/) build automation system. To
 perform a build, use gradle version 4.9 and execute
 
     gradle
@@ -27,19 +27,19 @@ your system you can instead run the supplied Gradle wrapper `gradlew`)*
 
 ### Integration with Eclipse IDE
 
-The **Mixin** project can be integrated easily with Eclipse using Buildship.
+The **Mixim** project can be integrated easily with Eclipse using Buildship.
 Simply choose `Import` -> `Gradle Project` and follow the prompts.
 
-When developing using **Mixin**, you can use the **Mixin Annotation Processor**
+When developing using **Mixim**, you can use the **Mixim Annotation Processor**
 within Eclipse to provide context-sensitive errors and warnings to help you more
-easily troubleshoot your mixins. To do so:
+easily troubleshoot your mixims. To do so:
 
-1. Run the `gradle build` command to generate the mixin jar
+1. Run the `gradle build` command to generate the mixim jar
 2. Open the properties of your eclipse project and navigate to `Java Compiler`
   -> `Annotation Processing` -> `Factory Path`  
 3. Check the `Enable project specific settings` checkbox
-4. Click the `Add External JARs` button and select the generated mixin jar with
- the suffix **-processor** (hint: it should be in `Mixin/build/libs`)
+4. Click the `Add External JARs` button and select the generated mixim jar with
+ the suffix **-processor** (hint: it should be in `Mixim/build/libs`)
 5. Navigate up one level to `Java Compiler` -> `Annotation Processing`
 6. Check the `Enable project specific settings` checkbox
 7. Check the `Enable annotation processing` checkbox
@@ -51,7 +51,7 @@ easily troubleshoot your mixins. To do so:
 
 ### Integration with IntelliJ IDEA IDE
 
-Enhanced functionality for working with **Mixin** in IntelliJ IDEA is available
+Enhanced functionality for working with **Mixim** in IntelliJ IDEA is available
 via the [Minecraft Development for IntelliJ IDEA](https://plugins.jetbrains.com/idea/plugin/8327)
 plugin developed by [DemonWav](https://github.com/demonwav).  
 
@@ -94,7 +94,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
             agent chokes on a specific opcode</li>
           <li>Bug fixes for
             <ul>
-              <li>Calling members of accessor mixins from inside mixin code</li>
+              <li>Calling members of accessor mixims from inside mixim code</li>
               <li>Incorrect handling of spaces in explicit target declarations</li>
               <li>Unexpected behaviour when attempting to redirect a ctor</li>
               <li>Properly detect incompatible accessor overlap and ignore valid
@@ -107,7 +107,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
                 operands on the stack needing DUP2</li>
               <li>Fixed issue in LVT generator folded in from FabricMC</li>
               <li>Fail-fast when a <tt>final</tt> method is accidentally hidden
-                by a mixin</li>  
+                by a mixim</li>  
               <li>Fix the appearance of stray <tt>CallbackInfo</tt> instances in
                 local capture injector LVTs</li>
             </ul>
@@ -137,7 +137,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">June 2018</td>
       <td valign="top">
         <ul>
-          <li>Log an error when a mixin class is subject to classloader restrictions</li>
+          <li>Log an error when a mixim class is subject to classloader restrictions</li>
         </ul>
       </td>
     </tr>
@@ -146,7 +146,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">April 2018</td>
       <td valign="top">
         <ul>
-          <li>Allow certain injectors to target mixin methods.</li>
+          <li>Allow certain injectors to target mixim methods.</li>
         </ul>
       </td>
     </tr>
@@ -195,7 +195,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">September 2017</td>
       <td valign="top">
         <ul>
-          <li>Added <tt>&#064;Dynamic</tt> annotation for decorating mixin
+          <li>Added <tt>&#064;Dynamic</tt> annotation for decorating mixim
           elements with dynamically-injected targets.</li>
         </ul>
       </td>
@@ -214,7 +214,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">August 2017</td>
       <td valign="top">
         <ul>
-          <li>Add profiler for inspecting mixin performance.</li>
+          <li>Add profiler for inspecting mixim performance.</li>
         </ul>
       </td>
     </tr>
@@ -223,7 +223,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">August 2017</td>
       <td valign="top">
         <ul>
-          <li>Fixes and improvements to the Mixin AP, fixing handling of multi-
+          <li>Fixes and improvements to the Mixim AP, fixing handling of multi-
           dimensional arrays and resolving methods in superclasses of derived
           types of obfuscated classes</li>
           <li>Add runtime refmap remapping to support using deobfCompile
@@ -238,7 +238,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
         <ul>
           <li>All official binaries are now signed</li>
           <li>Upgrade to ASM 5.2</li>
-          <li>Add support for inner classes in Mixins</li>
+          <li>Add support for inner classes in Mixims</li>
           <li>Injectors can now have multiple explicit targets</li>
           <li><tt>&#064;At</tt> annotations can now have their own <tt>id</tt></li>
           <li>Add support for using <tt>&#064;Overwrite</tt> on non-obfuscated
@@ -302,10 +302,10 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">
         <ul>
           <li>Fix handling of <tt>&#064;Unique</tt> when the same unique method
-          exists in more than one mixin targetting the same class</li>
-          <li>Fix handling of merged lambdas so that lambdas from mixins are
+          exists in more than one mixim targetting the same class</li>
+          <li>Fix handling of merged lambdas so that lambdas from mixims are
           applied correctly when lambdas already exist in the target class (both
-          in the original class and when applied by earlier mixins)</li>
+          in the original class and when applied by earlier mixims)</li>
         </ul>
       </td>
     </tr>
@@ -315,7 +315,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">
         <ul>
           <li>(0.6.9) Minor fix to remove dependence on deprecated helper</li>
-          <li>Respect <tt>remap</tt> on Mixin for contained <tt>&#064;At</tt></li>
+          <li>Respect <tt>remap</tt> on Mixim for contained <tt>&#064;At</tt></li>
           <li>Require redirectors which occur before call to superctor to be static</li>
         </ul>
       </td>
@@ -343,7 +343,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">January 2017</td>
       <td valign="top">
         <ul>
-          <li>Allow static methods in accessor mixins in Java 8 and above</li>
+          <li>Allow static methods in accessor mixims in Java 8 and above</li>
         </ul>
       </td>
     </tr>
@@ -379,7 +379,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">December 2016</td>
       <td valign="top">
         <ul>
-          <li>Add support for &#064;Pseudo (virtual target) mixins</li>
+          <li>Add support for &#064;Pseudo (virtual target) mixims</li>
         </ul>
       </td>
     </tr>
@@ -397,7 +397,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">October 2016</td>
       <td valign="top">
         <ul>
-          <li><em>Accessor Mixin</em> support</li>
+          <li><em>Accessor Mixim</em> support</li>
         </ul>
       </td>
     </tr>
@@ -417,7 +417,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">
         <ul>
           <li>Annotation Processor improvements. Support shadows and overrides
-          in multi-target mixins</li>
+          in multi-target mixims</li>
           <li>Support pluggable obfuscation environments in AP</li>
         </ul>
       </td>
@@ -454,7 +454,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">June 2016</td>
       <td valign="top">
         <ul>
-          <li>Hard fail if a required mixin target was already transformed</li>
+          <li>Hard fail if a required mixim target was already transformed</li>
         </ul>
       </td>
     </tr>
@@ -501,7 +501,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">April 2016</td>
       <td valign="top">
         <ul>
-          <li>Error handlers also receive mixin prepare errors</li>
+          <li>Error handlers also receive mixim prepare errors</li>
         </ul>
       </td>
     </tr>
@@ -531,7 +531,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">February 2016</td>
       <td valign="top">
         <ul>
-          <li>Overhaul injectors, injectors from all mixins now scan before any
+          <li>Overhaul injectors, injectors from all mixims now scan before any
           injectors are actually processed. Makes injectors more deterministic.
           </li>
         </ul>
@@ -580,7 +580,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">January 2016</td>
       <td valign="top">
         <ul>
-          <li>Add support for interface mixins</li>
+          <li>Add support for interface mixims</li>
         </ul>
       </td>
     </tr>
@@ -619,8 +619,8 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">
         <ul>
           <li>Annotation Processor improved to support
-            <a href="https://github.com/SpongePowered/MixinGradle">
-            MixinGradle</a>
+            <a href="https://github.com/SpongePowered/MiximGradle">
+            MiximGradle</a>
           </li>
           <li>Support multiple target obfuscation environments in refmaps</li>
         </ul>
@@ -632,8 +632,8 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">
         <ul>
           <li>Add INIT phase for handling early FML startup</li>
-          <li>Add support for lambdas in mixins</li>
-          <li>Add support for hot code replacement in mixins</li>
+          <li>Add support for lambdas in mixims</li>
+          <li>Add support for hot code replacement in mixims</li>
           <li>Improve Java 8 feature support</li>
         </ul>
       </td>
@@ -706,7 +706,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">March 2015</td>
       <td valign="top">
         <ul>
-          <li>Added supermixin support (mixins inheriting from other mixins)</li>
+          <li>Added supermixim support (mixims inheriting from other mixims)</li>
         </ul>
       </td>
     </tr>
@@ -715,7 +715,7 @@ plugin developed by [DemonWav](https://github.com/demonwav).
       <td valign="top">January 2015</td>
       <td valign="top">
         <ul>
-          <li>Basic Mixin Support</li>
+          <li>Basic Mixim Support</li>
           <li>Basic Injector Support</li>
           <li>Annotation Processor</li>
         </ul>

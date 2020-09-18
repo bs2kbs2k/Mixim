@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -39,10 +39,10 @@ import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
-import org.spongepowered.asm.mixin.Debug;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Intrinsic;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixim.Debug;
+import org.spongepowered.asm.mixim.Final;
+import org.spongepowered.asm.mixim.Intrinsic;
+import org.spongepowered.asm.mixim.Overwrite;
 
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
@@ -65,7 +65,7 @@ public final class Annotations {
 
     private static Pattern mergeableAnnotationPattern = Annotations.getMergeableAnnotationPattern();
 
-    private static final Logger logger = LogManager.getLogger("mixin");
+    private static final Logger logger = LogManager.getLogger("mixim");
     
     private Annotations() {
         // Utility class
@@ -548,7 +548,7 @@ public final class Annotations {
      * ClassNode, replaces annotations of the equivalent type on the target with
      * annotations from the source. If the source node has no annotations then
      * no action will take place, if the target node has no annotations then a
-     * new annotation list will be created. Annotations from the mixin package
+     * new annotation list will be created. Annotations from the mixim package
      * are not merged. 
      * 
      * @param from ClassNode to merge annotations from
@@ -564,7 +564,7 @@ public final class Annotations {
      * MethodNode, replaces annotations of the equivalent type on the target
      * with annotations from the source. If the source node has no annotations
      * then no action will take place, if the target node has no annotations
-     * then a new annotation list will be created. Annotations from the mixin
+     * then a new annotation list will be created. Annotations from the mixim
      * package are not merged. 
      * 
      * @param from MethodNode to merge annotations from
@@ -580,7 +580,7 @@ public final class Annotations {
      * FieldNode, replaces annotations of the equivalent type on the target with
      * annotations from the source. If the source node has no annotations then
      * no action will take place, if the target node has no annotations then a
-     * new annotation list will be created. Annotations from the mixin package
+     * new annotation list will be created. Annotations from the mixim package
      * are not merged. 
      * 
      * @param from FieldNode to merge annotations from

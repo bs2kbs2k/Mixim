@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -29,14 +29,14 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.Map.Entry;
 
-import org.spongepowered.asm.service.MixinService;
+import org.spongepowered.asm.service.MiximService;
 import org.spongepowered.asm.util.PrettyPrinter;
 import org.spongepowered.asm.util.PrettyPrinter.Alignment;
 
 import com.google.common.base.Joiner;
 
 /**
- * Performance profiler for Mixin.
+ * Performance profiler for Mixim.
  */
 public final class Profiler {
     
@@ -786,7 +786,7 @@ public final class Profiler {
     }
 
     /**
-     * Print summary of mixin performance to the console
+     * Print summary of mixim performance to the console
      */
     public void printSummary() {
         
@@ -794,20 +794,20 @@ public final class Profiler {
         DecimalFormat onedp = new DecimalFormat("(###0.0");
         PrettyPrinter printer = this.printer(false, false);
         
-        long prepareTime = this.get("mixin.prepare").getTotalTime();
-        long readTime = this.get("mixin.read").getTotalTime();
-        long applyTime = this.get("mixin.apply").getTotalTime();
-        long writeTime = this.get("mixin.write").getTotalTime();
-        long totalMixinTime = this.get("mixin").getTotalTime();
+        long prepareTime = this.get("mixim.prepare").getTotalTime();
+        long readTime = this.get("mixim.read").getTotalTime();
+        long applyTime = this.get("mixim.apply").getTotalTime();
+        long writeTime = this.get("mixim.write").getTotalTime();
+        long totalMiximTime = this.get("mixim").getTotalTime();
         
         long loadTime = this.get("class.load").getTotalTime();
         long transformTime = this.get("class.transform").getTotalTime();
-        long exportTime = this.get("mixin.debug.export").getTotalTime();
-        long actualTime = totalMixinTime - loadTime - transformTime - exportTime;
-        double timeSliceMixin = ((double)actualTime / (double)totalMixinTime) * 100.0D;
-        double timeSliceLoad = ((double)loadTime / (double)totalMixinTime) * 100.0D;
-        double timeSliceTransform = ((double)transformTime / (double)totalMixinTime) * 100.0D;
-        double timeSliceExport = ((double)exportTime / (double)totalMixinTime) * 100.0D;
+        long exportTime = this.get("mixim.debug.export").getTotalTime();
+        long actualTime = totalMiximTime - loadTime - transformTime - exportTime;
+        double timeSliceMixim = ((double)actualTime / (double)totalMiximTime) * 100.0D;
+        double timeSliceLoad = ((double)loadTime / (double)totalMiximTime) * 100.0D;
+        double timeSliceTransform = ((double)transformTime / (double)totalMiximTime) * 100.0D;
+        double timeSliceExport = ((double)exportTime / (double)totalMiximTime) * 100.0D;
         
         long worstTransformerTime = 0L;
         Section worstTransformer = null;
@@ -823,10 +823,10 @@ public final class Profiler {
         printer.hr().add("Summary").hr().add();
         
         String format = "%9d ms %12s seconds)";
-        printer.kv("Total mixin time", format, totalMixinTime, threedp.format(totalMixinTime * 0.001)).add();
-        printer.kv("Preparing mixins", format, prepareTime, threedp.format(prepareTime * 0.001));
+        printer.kv("Total mixim time", format, totalMiximTime, threedp.format(totalMiximTime * 0.001)).add();
+        printer.kv("Preparing mixims", format, prepareTime, threedp.format(prepareTime * 0.001));
         printer.kv("Reading input", format, readTime, threedp.format(readTime * 0.001));
-        printer.kv("Applying mixins", format, applyTime, threedp.format(applyTime * 0.001));
+        printer.kv("Applying mixims", format, applyTime, threedp.format(applyTime * 0.001));
         printer.kv("Writing output", format, writeTime, threedp.format(writeTime * 0.001)).add();
         
         printer.kv("of which","");
@@ -840,7 +840,7 @@ public final class Profiler {
             printer.kv("called", "%d times", worstTransformer.getTotalCount()).add();
         }
         
-        printer.kv("   Time allocation:     Processing mixins", "%9d ms %10s%% of total)", actualTime, onedp.format(timeSliceMixin));
+        printer.kv("   Time allocation:     Processing mixims", "%9d ms %10s%% of total)", actualTime, onedp.format(timeSliceMixim));
         printer.kv("Loading classes", "%9d ms %10s%% of total)", loadTime, onedp.format(timeSliceLoad));
         printer.kv("Running transformers", "%9d ms %10s%% of total)", transformTime, onedp.format(timeSliceTransform));
         if (exportTime > 0L) {
@@ -849,7 +849,7 @@ public final class Profiler {
         printer.add();
         
         try {
-            Class<?> agent = MixinService.getService().getClassProvider().findAgentClass(Profiler.METRONOME_AGENT_CLASS, false);
+            Class<?> agent = MiximService.getService().getClassProvider().findAgentClass(Profiler.METRONOME_AGENT_CLASS, false);
             Method mdGetTimes = agent.getDeclaredMethod("getTimes");
             
             @SuppressWarnings("unchecked")
@@ -864,16 +864,16 @@ public final class Profiler {
             
             for (Entry<String, Long> entry : times.entrySet()) {
                 String name = entry.getKey();
-                long mixinTime = 0L;
+                long miximTime = 0L;
                 for (Section section : this.getSections()) {
                     if (name.equals(section.getInfo())) {
-                        mixinTime = section.getTotalTime();
+                        miximTime = section.getTotalTime();
                         break;
                     }
                 }
                 
-                if (mixinTime > 0L) {
-                    printer.add("%-" + longest + "s %8s ms %8s ms in mixin)", name, entry.getValue() + mixinTime, "(" + mixinTime);
+                if (miximTime > 0L) {
+                    printer.add("%-" + longest + "s %8s ms %8s ms in mixim)", name, entry.getValue() + miximTime, "(" + miximTime);
                 } else {
                     printer.add("%-" + longest + "s %8s ms", name, entry.getValue());
                 }

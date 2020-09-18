@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -27,7 +27,7 @@ package org.spongepowered.asm.launch.platform.container;
 import java.util.Collection;
 
 /**
- * Interface for container handles. Previously resources considered by Mixin
+ * Interface for container handles. Previously resources considered by Mixim
  * were indexed by URI but in order to provide more flexibility the container
  * handle system now wraps URIs in a more expressive object, and provides
  * support for both virtual containers and nested container resolution.

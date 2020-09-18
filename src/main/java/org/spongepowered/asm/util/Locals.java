@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -45,11 +45,11 @@ import org.objectweb.asm.tree.analysis.Analyzer;
 import org.objectweb.asm.tree.analysis.AnalyzerException;
 import org.objectweb.asm.tree.analysis.BasicValue;
 import org.objectweb.asm.tree.analysis.Frame;
-import org.spongepowered.asm.mixin.transformer.ClassInfo;
-import org.spongepowered.asm.mixin.transformer.ClassInfo.FrameData;
-import org.spongepowered.asm.mixin.transformer.ClassInfo.Method;
+import org.spongepowered.asm.mixim.transformer.ClassInfo;
+import org.spongepowered.asm.mixim.transformer.ClassInfo.FrameData;
+import org.spongepowered.asm.mixim.transformer.ClassInfo.Method;
 import org.spongepowered.asm.util.asm.ASM;
-import org.spongepowered.asm.util.asm.MixinVerifier;
+import org.spongepowered.asm.util.asm.MiximVerifier;
 import org.spongepowered.asm.util.throwables.LVTGeneratorError;
 
 /**
@@ -389,7 +389,7 @@ public final class Locals {
 
         // Use Analyzer to generate the bytecode frames
         Analyzer<BasicValue> analyzer = new Analyzer<BasicValue>(
-                new MixinVerifier(ASM.API_VERSION, Type.getObjectType(classNode.name), objectType, interfaces, false));
+                new MiximVerifier(ASM.API_VERSION, Type.getObjectType(classNode.name), objectType, interfaces, false));
         try {
             analyzer.analyze(classNode.name, method);
         } catch (AnalyzerException ex) {

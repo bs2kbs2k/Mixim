@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.interfaces.IOptionProvider;
 import org.spongepowered.tools.obfuscation.service.ObfuscationTypeDescriptor;
 
@@ -62,14 +62,14 @@ public final class ObfuscationType {
     /**
      * Annotation Processor
      */
-    private final IMixinAnnotationProcessor ap;
+    private final IMiximAnnotationProcessor ap;
     
     /**
      * Option provider
      */
     private final IOptionProvider options;
     
-    private ObfuscationType(ObfuscationTypeDescriptor descriptor, IMixinAnnotationProcessor ap) {
+    private ObfuscationType(ObfuscationTypeDescriptor descriptor, IMiximAnnotationProcessor ap) {
         this.key = descriptor.getKey();
         this.descriptor = descriptor;
         this.ap = ap;
@@ -104,7 +104,7 @@ public final class ObfuscationType {
         return this.descriptor;
     }
     
-    public IMixinAnnotationProcessor getAnnotationProcessor() {
+    public IMiximAnnotationProcessor getAnnotationProcessor() {
         return this.ap;
     }
     
@@ -165,7 +165,7 @@ public final class ObfuscationType {
      * @param ap annotation processor
      * @return new obfuscation type
      */
-    public static ObfuscationType create(ObfuscationTypeDescriptor descriptor, IMixinAnnotationProcessor ap) {
+    public static ObfuscationType create(ObfuscationTypeDescriptor descriptor, IMiximAnnotationProcessor ap) {
         String key = descriptor.getKey();
         if (ObfuscationType.types.containsKey(key)) {
             throw new IllegalArgumentException("Obfuscation type with key " + key + " was already registered");

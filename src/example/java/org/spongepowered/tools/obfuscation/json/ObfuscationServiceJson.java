@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -27,7 +27,7 @@ package org.spongepowered.tools.obfuscation.json;
 import java.util.Collection;
 import java.util.Set;
 
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.mcp.ObfuscationServiceMCP;
 import org.spongepowered.tools.obfuscation.service.IObfuscationService;
 import org.spongepowered.tools.obfuscation.service.ObfuscationTypeDescriptor;
@@ -55,7 +55,7 @@ public class ObfuscationServiceJson implements IObfuscationService {
     }
 
     @Override
-    public Collection<ObfuscationTypeDescriptor> getObfuscationTypes(IMixinAnnotationProcessor ap) {
+    public Collection<ObfuscationTypeDescriptor> getObfuscationTypes(IMiximAnnotationProcessor ap) {
         return ImmutableList.<ObfuscationTypeDescriptor>of(
             new ObfuscationTypeDescriptor(
                 ObfuscationServiceJson.KEY,

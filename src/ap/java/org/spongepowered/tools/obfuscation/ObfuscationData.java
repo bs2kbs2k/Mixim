@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -31,7 +31,7 @@ import java.util.Map;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 
 /**
- * Return value struct for various obfuscation queries performed by the mixin
+ * Return value struct for various obfuscation queries performed by the mixim
  * annotation processor.
  * 
  * <p>When obfuscation queries are performed by the AP, the returned data are

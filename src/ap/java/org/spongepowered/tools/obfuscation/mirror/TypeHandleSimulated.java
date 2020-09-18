@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -32,16 +32,16 @@ import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorByName;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorByName;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 import org.spongepowered.asm.util.SignaturePrinter;
 
 /**
- * A simulated type handle, used with virtual (pseudo) mixins. For obfuscation
+ * A simulated type handle, used with virtual (pseudo) mixims. For obfuscation
  * purposes, we have to use some kind of context to resolve target members so
- * that appropriate refmaps can be generated. For this purpose we use the mixin
+ * that appropriate refmaps can be generated. For this purpose we use the mixim
  * itself as the context in order to allow us to look up members in superclasses
- * and superinterfaces of the mixin (in the hope that we can locate targets
+ * and superinterfaces of the mixim (in the hope that we can locate targets
  * there. If we cannot achieve this, then remapping will have to be done by hand
  */
 public class TypeHandleSimulated extends TypeHandle {
@@ -114,7 +114,7 @@ public class TypeHandleSimulated extends TypeHandle {
 
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.mirror.TypeHandle
-     *  #findDescriptor(org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *  #findDescriptor(org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     public String findDescriptor(ITargetSelectorByName memberInfo) {

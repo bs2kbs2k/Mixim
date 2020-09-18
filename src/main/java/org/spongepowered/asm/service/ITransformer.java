@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -39,7 +39,7 @@ public interface ITransformer {
     
     /**
      * Get whether this transformer is excluded from delegation. Some
-     * transformers (such as the mixin transformer itself) should not be
+     * transformers (such as the mixim transformer itself) should not be
      * included in the delegation list because they are re-entrant or do not
      * need to run on incoming bytecode.
      * 

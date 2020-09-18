@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -25,18 +25,18 @@
 package org.spongepowered.asm.util.asm;
 
 import org.objectweb.asm.tree.MethodNode;
-import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+import org.spongepowered.asm.mixim.extensibility.IMiximInfo;
 
 /**
  * MethodNode with some extra convenience functionality
  */
 public class MethodNodeEx extends MethodNode {
     
-    private final IMixinInfo owner;
+    private final IMiximInfo owner;
 
     private final String originalName;
     
-    public MethodNodeEx(int access, String name, String descriptor, String signature, String[] exceptions, IMixinInfo owner) {
+    public MethodNodeEx(int access, String name, String descriptor, String signature, String[] exceptions, IMiximInfo owner) {
         super(ASM.API_VERSION, access, name, descriptor, signature, exceptions);
         this.originalName = name;
         this.owner = owner;
@@ -55,7 +55,7 @@ public class MethodNodeEx extends MethodNode {
         return this.originalName;
     }
     
-    public IMixinInfo getOwner() {
+    public IMiximInfo getOwner() {
         return this.owner;
     }
 

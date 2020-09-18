@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -26,7 +26,7 @@ package org.spongepowered.asm.util;
 
 import java.io.File;
 
-import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixim.Mixim;
 
 /**
  * Miscellaneous shared constants
@@ -36,8 +36,8 @@ public abstract class Constants {
     public static final String CTOR = "<init>";
     public static final String CLINIT = "<clinit>";
     public static final String IMAGINARY_SUPER = "super$";
-    public static final String DEBUG_OUTPUT_PATH = ".mixin.out";
-    public static final String MIXIN_PACKAGE = Mixin.class.getPackage().getName();
+    public static final String DEBUG_OUTPUT_PATH = ".mixim.out";
+    public static final String MIXIN_PACKAGE = Mixim.class.getPackage().getName();
     public static final String MIXIN_PACKAGE_REF = Constants.MIXIN_PACKAGE.replace('.', '/');
 
     public static final String STRING = "java/lang/String";
@@ -67,12 +67,12 @@ public abstract class Constants {
         
         public static final String TWEAKER = "TweakClass";
         public static final String MAINCLASS = "Main-Class";
-        public static final String MIXINCONFIGS = "MixinConfigs";
-        public static final String TOKENPROVIDERS = "MixinTokenProviders";
-        public static final String MIXINCONNECTOR = "MixinConnector";
+        public static final String MIXINCONFIGS = "MiximConfigs";
+        public static final String TOKENPROVIDERS = "MiximTokenProviders";
+        public static final String MIXINCONNECTOR = "MiximConnector";
         
         @Deprecated
-        public static final String COMPATIBILITY = "MixinCompatibilityLevel";
+        public static final String COMPATIBILITY = "MiximCompatibilityLevel";
 
         private ManifestAttributes() {}
     }

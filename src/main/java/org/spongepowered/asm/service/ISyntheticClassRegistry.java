@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -26,7 +26,7 @@ package org.spongepowered.asm.service;
 
 /**
  * Registry for synthetic classes, used internally to track which classes need
- * to be generated at runtime by the mixin pipeline.
+ * to be generated at runtime by the mixim pipeline.
  */
 public interface ISyntheticClassRegistry {
 

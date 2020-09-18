@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -30,7 +30,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Options passed in to Mixin via the command line
+ * Options passed in to Mixim via the command line
  */
 public final class CommandLineOptions {
     
@@ -54,7 +54,7 @@ public final class CommandLineOptions {
             if (captureNext) {
                 this.configs.add(arg);
             }
-            captureNext = "--mixin".equals(arg) || "--mixin.config".equals(arg);
+            captureNext = "--mixim".equals(arg) || "--mixim.config".equals(arg);
         }
     }
     

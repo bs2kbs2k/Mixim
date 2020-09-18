@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -24,7 +24,7 @@
  */
 package org.spongepowered.tools.obfuscation.interfaces;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorRemappable;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorRemappable;
 import org.spongepowered.asm.obfuscation.mapping.IMapping;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -32,7 +32,7 @@ import org.objectweb.asm.tree.ClassNode;
 import cpw.mods.modlauncher.serviceapi.ILaunchPluginService.Phase;
 
 /**
- * Interface for shunting classes through other parts of the Mixin subsystem
+ * Interface for shunting classes through other parts of the Mixim subsystem
  * when they arrive at the plugin
  */
 public interface IClassProcessor {
@@ -52,7 +52,7 @@ public interface IClassProcessor {
 
     
     /**
-     * Callback from the mixin plugin
+     * Callback from the mixim plugin
      * 
      * @param phase The phase of the supplied class node
      * @param classNode the classnode to process

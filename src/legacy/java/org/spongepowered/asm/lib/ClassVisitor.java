@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -26,7 +26,7 @@
 package org.spongepowered.asm.lib;
 
 import org.spongepowered.asm.lib.tree.ClassNode;
-import org.spongepowered.asm.mixin.throwables.CompanionPluginError;
+import org.spongepowered.asm.mixim.throwables.CompanionPluginError;
 
 // CHECKSTYLE:OFF
 

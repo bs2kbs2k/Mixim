@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -24,20 +24,20 @@
  */
 package org.spongepowered.asm.service;
 
-import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+import org.spongepowered.asm.mixim.extensibility.IMiximInfo;
 
 /**
- * Interface for information bundle about a synthetic class provided by Mixin.
+ * Interface for information bundle about a synthetic class provided by Mixim.
  * Specified as an interface so that existing generator structs can be decorated
  * easily.
  */
 public interface ISyntheticClassInfo {
 
     /**
-     * Get the mixin which incepted this synthetic class (if more than one mixin
+     * Get the mixim which incepted this synthetic class (if more than one mixim
      * is resposible, returns the first)
      */
-    public abstract IMixinInfo getMixin();
+    public abstract IMiximInfo getMixim();
 
     /**
      * Get the class name (binary name)

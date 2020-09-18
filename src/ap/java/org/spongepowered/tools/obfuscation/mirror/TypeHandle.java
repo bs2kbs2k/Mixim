@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -39,7 +39,7 @@ import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorByName;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorByName;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 import org.spongepowered.asm.util.Bytecode;
 import org.spongepowered.tools.obfuscation.mirror.mapping.MappingMethodResolvable;

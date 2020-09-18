@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -28,7 +28,7 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.LocalVariableNode;
 import org.objectweb.asm.tree.MethodNode;
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorByName;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorByName;
 
 import com.google.common.base.Strings;
 

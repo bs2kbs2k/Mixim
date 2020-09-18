@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -33,10 +33,10 @@ import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.TypeInsnNode;
 import org.objectweb.asm.tree.VarInsnNode;
-import org.spongepowered.asm.mixin.refmap.IMixinContext;
-import org.spongepowered.asm.mixin.throwables.MixinException;
-import org.spongepowered.asm.mixin.transformer.ClassInfo;
-import org.spongepowered.asm.mixin.transformer.meta.MixinMerged;
+import org.spongepowered.asm.mixim.refmap.IMiximContext;
+import org.spongepowered.asm.mixim.throwables.MiximException;
+import org.spongepowered.asm.mixim.transformer.ClassInfo;
+import org.spongepowered.asm.mixim.transformer.meta.MiximMerged;
 import org.spongepowered.asm.util.Annotations;
 import org.spongepowered.asm.util.Bytecode;
 import org.spongepowered.asm.util.PrettyPrinter;
@@ -46,7 +46,7 @@ import org.spongepowered.asm.util.PrettyPrinter;
  * with the corresponding problem and functionality to support debugging when
  * verbosity is enabled.
  */
-public class SyntheticBridgeException extends MixinException {
+public class SyntheticBridgeException extends MiximException {
 
     private static final long serialVersionUID = 1L;
 
@@ -115,15 +115,15 @@ public class SyntheticBridgeException extends MixinException {
     }
     
     /**
-     * @param context Incoming mixin
+     * @param context Incoming mixim
      * @param mda Target method
      * @param mdb Incoming method
      */
-    public void printAnalysis(IMixinContext context, MethodNode mda, MethodNode mdb) {
+    public void printAnalysis(IMiximContext context, MethodNode mda, MethodNode mdb) {
         PrettyPrinter printer = new PrettyPrinter();
         printer.addWrapped(100, this.getMessage()).hr();
         printer.add().kv("Method", this.name + this.desc).kv("Problem Type", this.problem).add().hr();
-        String merged = Annotations.<String>getValue(Annotations.getVisible(mda, MixinMerged.class), "mixin");
+        String merged = Annotations.<String>getValue(Annotations.getVisible(mda, MiximMerged.class), "mixim");
         String owner = merged != null ? merged : context.getTargetClassRef().replace('/', '.');
         this.printMethod(printer.add("Existing method").add().kv("Owner", owner).add(), mda).hr();
         this.printMethod(printer.add("Incoming method").add().kv("Owner", context.getClassRef().replace('/', '.')).add(), mdb).hr();
@@ -138,7 +138,7 @@ public class SyntheticBridgeException extends MixinException {
         return printer.add();
     }
 
-    private PrettyPrinter printProblem(PrettyPrinter printer, IMixinContext context, MethodNode mda, MethodNode mdb) {
+    private PrettyPrinter printProblem(PrettyPrinter printer, IMiximContext context, MethodNode mda, MethodNode mdb) {
         Type target = Type.getObjectType(context.getTargetClassRef());
         
         printer.add("Analysis").add();

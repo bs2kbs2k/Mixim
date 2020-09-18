@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -24,13 +24,13 @@
  */
 package org.spongepowered.asm.util.throwables;
 
-import org.spongepowered.asm.mixin.throwables.MixinError;
+import org.spongepowered.asm.mixim.throwables.MiximError;
 
 /**
  * Exception thrown when something goes horribly wrong whilst <del>summoning the
  * antichrist</del> generating the LVT for a target method.
  */
-public class LVTGeneratorError extends MixinError {
+public class LVTGeneratorError extends MiximError {
 
     private static final long serialVersionUID = 1L;
 

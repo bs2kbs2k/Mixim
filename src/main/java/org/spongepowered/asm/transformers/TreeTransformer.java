@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -70,7 +70,7 @@ public abstract class TreeTransformer implements ILegacyClassTransformer {
         // Use optimised writer for speed
         if (this.classReader != null && this.classNode == classNode) {
             this.classNode = null;
-            ClassWriter writer = new MixinClassWriter(this.classReader, ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
+            ClassWriter writer = new MiximClassWriter(this.classReader, ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
             this.classReader = null;
             classNode.accept(writer);
             return writer.toByteArray();
@@ -78,7 +78,7 @@ public abstract class TreeTransformer implements ILegacyClassTransformer {
 
         this.classNode = null;
 
-        ClassWriter writer = new MixinClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
+        ClassWriter writer = new MiximClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         classNode.accept(writer);
         return writer.toByteArray();
     }

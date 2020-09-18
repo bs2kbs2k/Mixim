@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -33,12 +33,12 @@ import javax.tools.FileObject;
 import javax.tools.StandardLocation;
 import javax.tools.Diagnostic.Kind;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorRemappable;
-import org.spongepowered.asm.mixin.injection.struct.MemberInfo;
-import org.spongepowered.asm.mixin.refmap.ReferenceMapper;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorRemappable;
+import org.spongepowered.asm.mixim.injection.struct.MemberInfo;
+import org.spongepowered.asm.mixim.refmap.ReferenceMapper;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.interfaces.IReferenceManager;
 
 /**
@@ -73,7 +73,7 @@ public class ReferenceManager implements IReferenceManager {
     /**
      * Annotation processor
      */
-    private final IMixinAnnotationProcessor ap;
+    private final IMiximAnnotationProcessor ap;
     
     /**
      * Name of the resource to write remapped refs to
@@ -92,7 +92,7 @@ public class ReferenceManager implements IReferenceManager {
     
     private boolean allowConflicts;
     
-    public ReferenceManager(IMixinAnnotationProcessor ap, List<ObfuscationEnvironment> environments) {
+    public ReferenceManager(IMiximAnnotationProcessor ap, List<ObfuscationEnvironment> environments) {
         this.ap = ap;
         this.environments = environments;
         this.outRefMapFileName = this.ap.getOption(SupportedOptions.OUT_REFMAP_FILE);
@@ -187,7 +187,7 @@ public class ReferenceManager implements IReferenceManager {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.interfaces.IObfuscationManager
      *      #addMethodMapping(java.lang.String, java.lang.String,
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo,
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo,
      *      org.spongepowered.tools.obfuscation.ObfuscationData)
      */
     @Override
@@ -205,7 +205,7 @@ public class ReferenceManager implements IReferenceManager {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.interfaces.IObfuscationManager
      *      #addFieldMapping(java.lang.String, java.lang.String,
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo,
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo,
      *      org.spongepowered.tools.obfuscation.ObfuscationData)
      */
     @Override

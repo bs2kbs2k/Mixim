@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -44,7 +44,7 @@ import org.spongepowered.asm.util.asm.ASM;
 /**
  * Represents an object-oriented view of a generic class signature. We use ASM's
  * {@link SignatureVisitor} to walk over an incoming signature in order to parse
- * out our internal tree. This is done so that incoming signatures from mixins
+ * out our internal tree. This is done so that incoming signatures from mixims
  * can be merged into the target class.
  */
 public class ClassSignature {

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -33,7 +33,7 @@ import org.spongepowered.asm.launch.platform.MainAttributes;
 
 /**
  * Container handle which directly replaces the use of classpath location URIs
- * from previous mixin versions
+ * from previous mixim versions
  */
 public class ContainerHandleURI implements IContainerHandle {
     

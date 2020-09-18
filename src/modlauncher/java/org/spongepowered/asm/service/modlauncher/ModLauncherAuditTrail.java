@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -26,12 +26,12 @@ package org.spongepowered.asm.service.modlauncher;
 
 import java.util.function.Consumer;
 
-import org.spongepowered.asm.service.IMixinAuditTrail;
+import org.spongepowered.asm.service.IMiximAuditTrail;
 
 /**
  * Audit trail adapter for ModLauncher
  */
-public class ModLauncherAuditTrail implements IMixinAuditTrail {
+public class ModLauncherAuditTrail implements IMiximAuditTrail {
     
     private static final String APPLY_MIXIN_ACTIVITY = "APP";
     private static final String POST_PROCESS_ACTIVITY = "DEC";
@@ -57,16 +57,16 @@ public class ModLauncherAuditTrail implements IMixinAuditTrail {
     }
     
     /* (non-Javadoc)
-     * @see org.spongepowered.asm.service.IMixinAuditTrail#onApply(
+     * @see org.spongepowered.asm.service.IMiximAuditTrail#onApply(
      *      java.lang.String, java.lang.String)
      */
     @Override
-    public void onApply(String className, String mixinName) {
-        this.writeActivity(className, ModLauncherAuditTrail.APPLY_MIXIN_ACTIVITY, mixinName);
+    public void onApply(String className, String miximName) {
+        this.writeActivity(className, ModLauncherAuditTrail.APPLY_MIXIN_ACTIVITY, miximName);
     }
 
     /* (non-Javadoc)
-     * @see org.spongepowered.asm.service.IMixinAuditTrail#onPostProcess(
+     * @see org.spongepowered.asm.service.IMiximAuditTrail#onPostProcess(
      *      java.lang.String)
      */
     @Override
@@ -75,7 +75,7 @@ public class ModLauncherAuditTrail implements IMixinAuditTrail {
     }
     
     /* (non-Javadoc)
-     * @see org.spongepowered.asm.service.IMixinAuditTrail#onGenerate(
+     * @see org.spongepowered.asm.service.IMiximAuditTrail#onGenerate(
      *      java.lang.String, java.lang.String)
      */
     @Override

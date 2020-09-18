@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -59,13 +59,13 @@ public enum SuppressedBy {
     OVERWRITE("overwrite"),
     
     /**
-     * Suppress warnings when a mixin target specified by name is located in the
+     * Suppress warnings when a mixim target specified by name is located in the
      * default package
      */
     DEFAULT_PACKAGE("default-package"),
     
     /**
-     * Suppress warnings when a mixin target is resolved by the AP as visible
+     * Suppress warnings when a mixim target is resolved by the AP as visible
      * but cannot be referenced with a class literal for some reason 
      */
     PUBLIC_TARGET("public-target"),

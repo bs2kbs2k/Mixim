@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -28,13 +28,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorRemappable;
-import org.spongepowered.asm.mixin.injection.struct.MemberInfo;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorRemappable;
+import org.spongepowered.asm.mixim.injection.struct.MemberInfo;
 import org.spongepowered.asm.obfuscation.mapping.IMapping;
 import org.spongepowered.asm.obfuscation.mapping.IMapping.Type;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 import org.spongepowered.tools.obfuscation.interfaces.IObfuscationDataProvider;
 import org.spongepowered.tools.obfuscation.mirror.TypeHandle;
 
@@ -47,14 +47,14 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /**
      * Annotation processor
      */
-    private final IMixinAnnotationProcessor ap;
+    private final IMiximAnnotationProcessor ap;
 
     /**
      * Available obfuscation environments
      */
     private final List<ObfuscationEnvironment> environments;
 
-    public ObfuscationDataProvider(IMixinAnnotationProcessor ap, List<ObfuscationEnvironment> environments) {
+    public ObfuscationDataProvider(IMiximAnnotationProcessor ap, List<ObfuscationEnvironment> environments) {
         this.ap = ap;
         this.environments = environments;
     }
@@ -62,7 +62,7 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.IObfuscationManager
      *      #getObfEntryRecursive(
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     public <T> ObfuscationData<T> getObfEntryRecursive(final ITargetSelectorRemappable targetMember) {
@@ -149,7 +149,7 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.IObfuscationManager
      *      #getObfEntry(
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     @SuppressWarnings("unchecked")
@@ -177,7 +177,7 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.IObfuscationManager
      *      #getObfMethodRecursive(
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     public ObfuscationData<MappingMethod> getObfMethodRecursive(ITargetSelectorRemappable targetMember) {
@@ -187,7 +187,7 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.IObfuscationManager
      *      #getObfMethod(
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     public ObfuscationData<MappingMethod> getObfMethod(ITargetSelectorRemappable method) {
@@ -269,7 +269,7 @@ public class ObfuscationDataProvider implements IObfuscationDataProvider {
     /* (non-Javadoc)
      * @see org.spongepowered.tools.obfuscation.IObfuscationManager
      *      #getObfFieldRecursive(
-     *      org.spongepowered.asm.mixin.injection.struct.MemberInfo)
+     *      org.spongepowered.asm.mixim.injection.struct.MemberInfo)
      */
     @Override
     public ObfuscationData<MappingField> getObfFieldRecursive(ITargetSelectorRemappable targetMember) {

@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -36,8 +36,8 @@ import javax.lang.model.type.TypeKind;
 import javax.lang.model.type.TypeMirror;
 import javax.tools.Diagnostic.Kind;
 
-import org.spongepowered.asm.mixin.injection.selectors.ITargetSelectorRemappable;
-import org.spongepowered.asm.mixin.injection.struct.MemberInfo;
+import org.spongepowered.asm.mixim.injection.selectors.ITargetSelectorRemappable;
+import org.spongepowered.asm.mixim.injection.struct.MemberInfo;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingField;
 import org.spongepowered.asm.obfuscation.mapping.common.MappingMethod;
 import org.spongepowered.asm.util.ObfuscationUtil;
@@ -48,7 +48,7 @@ import org.spongepowered.tools.obfuscation.mapping.IMappingWriter;
 import org.spongepowered.tools.obfuscation.mapping.IMappingConsumer.MappingSet;
 import org.spongepowered.tools.obfuscation.mirror.TypeHandle;
 import org.spongepowered.tools.obfuscation.interfaces.IObfuscationEnvironment;
-import org.spongepowered.tools.obfuscation.interfaces.IMixinAnnotationProcessor;
+import org.spongepowered.tools.obfuscation.interfaces.IMiximAnnotationProcessor;
 
 /**
  * Provides access to information relevant to a particular obfuscation
@@ -100,7 +100,7 @@ public abstract class ObfuscationEnvironment implements IObfuscationEnvironment 
     /**
      * Annotation processor
      */
-    protected final IMixinAnnotationProcessor ap;
+    protected final IMiximAnnotationProcessor ap;
 
     /**
      * Name of the resource to write generated mappings to

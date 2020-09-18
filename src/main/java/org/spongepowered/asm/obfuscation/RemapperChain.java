@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -27,10 +27,10 @@ package org.spongepowered.asm.obfuscation;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.spongepowered.asm.mixin.extensibility.IRemapper;
+import org.spongepowered.asm.mixim.extensibility.IRemapper;
 
 /**
- * Mixin environment remapper chain. Contains all remappers for the current
+ * Mixim environment remapper chain. Contains all remappers for the current
  * environment to facilitate remapping via all registered remappers.
  */
 public class RemapperChain implements IRemapper {

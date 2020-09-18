@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -29,18 +29,18 @@ import java.util.Collections;
 import java.util.List;
 
 import org.spongepowered.asm.lib.ClassVisitor;
-import org.spongepowered.asm.mixin.throwables.CompanionPluginError;
+import org.spongepowered.asm.mixim.throwables.CompanionPluginError;
 
 //CHECKSTYLE:OFF
 
 /**
- * Compatibility shim for <tt>IMixinConfigPlugin</tt>. Some of the basic fields
+ * Compatibility shim for <tt>IMiximConfigPlugin</tt>. Some of the basic fields
  * are stubbed out so that (for example) simple uses of <tt>classNode.name</tt>
  * will still work but any attempt to <em>write</em> to a field will fail and
  * any access to fields or methods will raise an error which can be caught by
  * the PluginHandle and marshalled to a useful(ish) error message.
  * 
- * <p>This is mainly provided so that mixin companions compiled for 0.7.x will
+ * <p>This is mainly provided so that mixim companions compiled for 0.7.x will
  * still work with 0.8 but will only crash if they access members of the
  * ClassNode provided in <tt>preApply</tt> and <tt>postApply</tt> (which they
  * might not). This provides a small degree of backward compatibility, or at

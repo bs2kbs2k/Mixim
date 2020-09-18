@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -28,7 +28,7 @@ import javax.annotation.processing.Messager;
 import javax.lang.model.element.Element;
 import javax.tools.Diagnostic;
 
-import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixim.injection.At;
 import org.spongepowered.tools.obfuscation.mirror.AnnotationHandle;
 
 /**

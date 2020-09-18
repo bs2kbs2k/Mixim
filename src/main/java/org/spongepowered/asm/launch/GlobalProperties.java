@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -29,7 +29,7 @@ import java.util.Map;
 
 import org.spongepowered.asm.service.IGlobalPropertyService;
 import org.spongepowered.asm.service.IPropertyKey;
-import org.spongepowered.asm.service.MixinService;
+import org.spongepowered.asm.service.MiximService;
 
 /**
  * Access to underlying global property service provided by the current
@@ -42,15 +42,15 @@ public final class GlobalProperties {
      */
     public static final class Keys {
 
-        public static final Keys INIT                         = Keys.of("mixin.initialised");
-        public static final Keys AGENTS                       = Keys.of("mixin.agents");
-        public static final Keys CONFIGS                      = Keys.of("mixin.configs");
-        public static final Keys PLATFORM_MANAGER             = Keys.of("mixin.platform");
+        public static final Keys INIT                         = Keys.of("mixim.initialised");
+        public static final Keys AGENTS                       = Keys.of("mixim.agents");
+        public static final Keys CONFIGS                      = Keys.of("mixim.configs");
+        public static final Keys PLATFORM_MANAGER             = Keys.of("mixim.platform");
         
-        public static final Keys FML_LOAD_CORE_MOD            = Keys.of("mixin.launch.fml.loadcoremodmethod");
-        public static final Keys FML_GET_REPARSEABLE_COREMODS = Keys.of("mixin.launch.fml.reparseablecoremodsmethod");
-        public static final Keys FML_CORE_MOD_MANAGER         = Keys.of("mixin.launch.fml.coremodmanagerclass");
-        public static final Keys FML_GET_IGNORED_MODS         = Keys.of("mixin.launch.fml.ignoredmodsmethod");
+        public static final Keys FML_LOAD_CORE_MOD            = Keys.of("mixim.launch.fml.loadcoremodmethod");
+        public static final Keys FML_GET_REPARSEABLE_COREMODS = Keys.of("mixim.launch.fml.reparseablecoremodsmethod");
+        public static final Keys FML_CORE_MOD_MANAGER         = Keys.of("mixim.launch.fml.coremodmanagerclass");
+        public static final Keys FML_GET_IGNORED_MODS         = Keys.of("mixim.launch.fml.ignoredmodsmethod");
         
         private static Map<String, Keys> keys;
         
@@ -100,7 +100,7 @@ public final class GlobalProperties {
     
     private static IGlobalPropertyService getService() {
         if (GlobalProperties.service == null) {
-            GlobalProperties.service = MixinService.getGlobalPropertyService();
+            GlobalProperties.service = MiximService.getGlobalPropertyService();
         }
         return GlobalProperties.service;
     }

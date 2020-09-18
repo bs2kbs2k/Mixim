@@ -1,5 +1,5 @@
 /*
- * This file is part of Mixin, licensed under the MIT License (MIT).
+ * This file is part of Mixim, licensed under the MIT License (MIT).
  *
  * Copyright (c) SpongePowered <https://www.spongepowered.org>
  * Copyright (c) contributors
@@ -36,7 +36,7 @@ import net.minecraft.launchwrapper.LaunchClassLoader;
 /**
  * Utility class for reflecting into {@link LaunchClassLoader}. We <b>do not
  * write</b> anything of the classloader fields, but we need to be able to read
- * them to perform some validation tasks, and insert entries for mixin "classes"
+ * them to perform some validation tasks, and insert entries for mixim "classes"
  * into the invalid classes set.
  */
 final class LaunchClassLoaderUtil implements IClassTracker {
@@ -90,7 +90,7 @@ final class LaunchClassLoaderUtil implements IClassTracker {
     }
 
     /* (non-Javadoc)
-     * @see org.spongepowered.asm.service.IMixinService#getClassRestrictions(
+     * @see org.spongepowered.asm.service.IMiximService#getClassRestrictions(
      *      java.lang.String)
      */
     @Override
@@ -157,8 +157,8 @@ final class LaunchClassLoaderUtil implements IClassTracker {
     
     /**
      * Stuff a class name directly into the invalidClasses set, this prevents
-     * the loader from classloading the named class. This is used by the mixin
-     * processor to prevent classloading of mixin classes
+     * the loader from classloading the named class. This is used by the mixim
+     * processor to prevent classloading of mixim classes
      * 
      * @param name class name
      */
